@@ -8,6 +8,7 @@
 - [Dependencies](#dependencies)
 - [Data Source](#data-source)
 - [Model Training](#model-training)
+- [Script Structure](#script-structure)
   
 ### Features
 1. **Face Detection**: Utilizes MTCNN to locate faces within images and returns coordinates.
@@ -28,7 +29,7 @@
 - `scikit-learn`
 
 ### Data Source
-> Data source is not provided since the model was trained of private images. A first file called `photos-private `contains images captured during a private event. A second file called `photos-perso` contains identity images of people that participated to the private event.
+> Data source is not provided since the model was trained on private images. The first file called `photos-private `contains images captured during a private event. A second file called `photos-perso` contains identity images of people who participated in the private event.
 
 ### Model Training
 1. Data Preparation: Organizing the dataset with labeled images for each identity. Ensure a balanced distribution of identities for effective training.
@@ -37,3 +38,20 @@
 4. Normalization: Normalizing the feature vectors using the normalize function from scikit-learn. Normalization ensures that all feature vectors have the same scale, which aids in better convergence during training.
 5. K-Nearest Neighbors (KNN) Training: EMploying the KNN algorithm to create a model that can classify new face feature vectors into predefined identity clusters. Adjusting the hyperparameters, such as the number of neighbors (k), based on your dataset characteristics.
 6. Save Model: Once training is complete, the trained KNN model is saved using a serialization method, such as pickle, to enable reuse without retraining.
+
+### Script Structure
+> The script structure is decomposed into 3 parts. In the first one, we prepare the functions for the prediction process of the second and third part.
+
+1) Define our functions
+  a) Functions for loading the images, detecting faces, using MTCNN, extracting vectors
+  b) Function to extract face vectors using data augmentation method
+
+2) Predict identities with data augmentation
+  a) Extract faces' vectors on identity pictures
+  b) Loop on every event pictures
+  c) Display all photos' names where identity is detected
+
+3) Predict identities without data augmentation (testing phase)
+  a) Extract faces' vectors on identity pictures
+  b) Loop on every event pictures
+  c) Display the results on the event pictures
