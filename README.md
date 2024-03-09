@@ -1,7 +1,7 @@
 ## Face identity detection model
 
 ### Description
-> This model was created as part of a school project centered around proposing a marketing data concept. The objective of the course was to present an innovative idea within the realm of data methods. Our application is specifically designed to streamline the sharing of event photos, with a primary focus on ensuring user privacy. Leveraging advanced facial recognition algorithms, the system can accurately identify individuals in event photos and selectively facilitate their sharing based on user-defined preferences.
+> This model was created as part of a school project. The objective of the course was to present an innovative idea within the realm of data methods. Our application is specifically designed to streamline the sharing of event photos, with a primary focus on ensuring user privacy. Leveraging advanced facial recognition algorithms, the system can accurately identify individuals in event photos and selectively facilitate their sharing based on user-defined preferences. This repository shares the training and testing phase of the model. Pre-trained methods are listed in [Model Training](#model-training).
 
 ### Table of Contents
 - [Features](#features)
