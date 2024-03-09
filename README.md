@@ -1,13 +1,13 @@
-## Face identity detection model
+## Face Identity Detection Algorithm
 
 ### Description
-> This model was created as part of a school project. The objective of the course was to present an innovative idea within the realm of data methods. Our application is specifically designed to streamline the sharing of event photos, with a primary focus on ensuring user privacy. Leveraging advanced facial recognition algorithms, the system can accurately identify individuals in event photos and selectively facilitate their sharing based on user-defined preferences. This repository shares the training and testing phase of the model. Pre-trained methods are listed in [Model Training](#model-training).
+> This repository was created as part of a school project. The objective of the course was to present an innovative idea within the realm of data methods. Our application is specifically designed to streamline the sharing of event photos, with a primary focus on ensuring user privacy. Leveraging advanced facial recognition algorithms, the system can accurately identify individuals in event photos and selectively facilitate their sharing based on user-defined preferences. This repository shares the training and testing phase of the algorithm. Pre-trained methods are listed in [Algorithm Process](#algorithm-process).
 
 ### Table of Contents
 - [Features](#features)
 - [Dependencies](#dependencies)
 - [Data Source](#data-source)
-- [Model Training](#model-training)
+- [Algorithm Process](#algorithm-process)
 - [Script Structure](#script-structure)
   
 ### Features
@@ -17,7 +17,6 @@
 4. **Scalability**: Designed to handle large datasets efficiently for robust identity clustering.
 
 ### Dependencies
-> This is a list of all dependencies used for the model training.
 - `numpy`
 - `matplotlib`
 - `mtcnn`
@@ -31,16 +30,15 @@
 ### Data Source
 > Data source is not provided since the model was trained on private images. The first file called `photos-private `contains images captured during a private event. A second file called `photos-perso` contains identity images of people who participated in the private event.
 
-### Model Training
-1. Data Preparation: Organizing the dataset with labeled images for each identity. Ensure a balanced distribution of identities for effective training.
+### Algorithm process
+1. Data Preparation: Organizing the dataset with labeled images for each identity.
 2. Face Detection and Feature Extraction: Utilizing the MTCNN algorithm to detect faces in images and FaceNet to extract feature vectors. This process transforms each face into a compact representation in a feature space.
-3. Labeling Data: Assigning unique labels to each identity in your dataset. This step is crucial for supervised learning.
-4. Normalization: Normalizing the feature vectors using the normalize function from scikit-learn. Normalization ensures that all feature vectors have the same scale, which aids in better convergence during training.
-5. K-Nearest Neighbors (KNN) Training: EMploying the KNN algorithm to create a model that can classify new face feature vectors into predefined identity clusters. Adjusting the hyperparameters, such as the number of neighbors (k), based on your dataset characteristics.
-6. Save Model: Once training is complete, the trained KNN model is saved using a serialization method, such as pickle, to enable reuse without retraining.
+3. Normalization: Normalizing the feature vectors using the normalize function from scikit-learn. Normalization ensures that all feature vectors have the same scale, which aids in better convergence during training.
+4. K-Nearest Neighbors (KNN) Training: Employing the KNN algorithm to create a model that can classify new face feature vectors into predefined identity clusters. Adjusting the hyperparameters, such as the number of neighbors (k), based on your dataset characteristics.
+5. Data Augmentation:  Enhancing face detection robustness by applying data augmentation techniques using the `imgaug` library. Common augmentations include rotation, scaling, and flipping, which help the model generalize better to variations in pose and lighting.
 
 ### Script Structure
-> The script structure is decomposed into 3 parts. In the first one, we prepare the functions for the prediction process of the second and third part.
+> The script structure is decomposed into 3 parts. In the first one, we prepare the functions for the prediction process of the second and third parts.
 
 1) Define our functions
   a) Functions for loading the images, detecting faces, using MTCNN, extracting vectors
