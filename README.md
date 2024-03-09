@@ -41,15 +41,15 @@
 > The script structure is decomposed into 3 parts. In the first one, we prepare the functions for the prediction process of the second and third parts.
 
 1) Define our functions
-  a) Functions for loading the images, detecting faces, using MTCNN, extracting vectors
-  b) Function to extract face vectors using data augmentation method
+- a) Functions for loading the images, detecting faces, using MTCNN, extracting vectors
+- b) Function to extract face vectors using data augmentation method
 
 2) Predict identities with data augmentation
-  a) Extract faces' vectors on identity pictures
-  b) Loop on every event pictures
-  c) Display all photos' names where identity is detected
+- a) Extract faces' vectors on identity pictures
+- b) Loop on every event pictures
+- c) Display all photos' names where identity is detected
 
 3) Predict identities without data augmentation (testing phase)
-  a) Extract faces' vectors on identity pictures
-  b) Loop on every event pictures
-  c) Display the results on the event pictures
+- a) Extract faces' vectors on identity pictures
+- b) Loop on every event pictures
+- c) Display the results on the event pictures
